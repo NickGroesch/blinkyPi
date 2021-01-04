@@ -22,8 +22,13 @@ def shutdown():
     print("releasing resources makes me feel so fresh")
 
 
+def pinTest():
+    for pin in pinList:
+        blinkMe(pin, 1)
+
+
 # testing the 7 blinks
 setup(pinList, None)
-for pin in pinList:
-    blinkMe(pin, 1)
+pinTest()
+blinkMe(pinList, 5)
 shutdown()
