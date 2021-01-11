@@ -1,0 +1,57 @@
+Feature :
+
+940nm IR Emission :50pcs
+
+(01) Bulb Size diameter : 5mm
+
+(01) Pin length: Approx. 25mm / 0.98"
+
+(02) Operate Distance : 18~20m
+
+(03) Forward Voltage (V) : 1.2-1.5V
+
+(04) Peak wavelength (nm): 940nm
+
+(05) Lens Color : Water Clear
+
+(06) Material: Semiconductor
+
+(07) Forward Current: 100mA
+
+(08) Power: 100mW
+
+(09) Operating temperature : -25~ +70 ℃
+
+(10) Storage temperature : -30 ~ +80 ℃
+
+
+Three Legs IR Receiver :50pcs
+
+(01) Model : VS1838B
+
+(02) Working Voltage : 2.7~5.5V
+
+(03) Low Level Voltage : 0.4V
+
+(04) High Level Voltage : 4.5V
+
+(05) Reception Distance : 18M
+
+(06) Frequence : 38KHz
+
+(07) Receiver Angle : ±45°
+
+(08) Bulb Size diameter : 5mm / 0.2"
+
+(09) Pin Length : 22.5mm / 0.88"
+
+(10) Epoxy resin package plus external shielding anti-dry design
+
+(11) Anti-dry ability, able to withstand the environment dry scratch
+
+(12) Output match TTL, CMOS level, active low
+
+(13) Application:audio-visual equipment (speakers, TV, DVD, satellite receivers, etc.); household appliances (air conditioning, electric fans, lighting, etc.); and other infrared remote control products.
+
+
+Packing Quantity:50pairs / 100pcs with a plastic box
