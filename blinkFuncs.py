@@ -29,8 +29,8 @@ def pinTest():
         blinkMe(pin, 1)
 
 
-# testing the 7 blinks
-setup(pinList, None)
-pinTest()
-blinkMe(pinList, 5)
-shutdown()
+# # testing the 7 blinks
+# setup(pinList, None)
+# pinTest()
+# blinkMe(pinList, 5)
+# shutdown()
