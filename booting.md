@@ -1,10 +1,10 @@
 ## BURN IMAGE
-once you have a older named `boot` we will create.edit 3 files in `boot/`
+once you have a folder named `boot` we will create.edit 3 files in `boot/`
 
 ### wpa_supplicant.conf
 * "The name of the file should be wpa_supplicant.conf and its contents will get copied to the system folder at boot time. It will then be deleted. So this a one time only process."
 
-* Here is the file : don't put extra spaces around the `=` and leave quotes around ssid and password
+* Here is the template: don't put extra spaces around the `=` and leave quotes around ssid and password
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1

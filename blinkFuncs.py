@@ -8,7 +8,8 @@ def setup(outList, inList):
     IO.setwarnings(True)
     IO.setmode(IO.BOARD)
     IO.setup(outList, IO.OUT)
-    IO.setup(inList, IO.IN)
+    if inList:
+        IO.setup(inList, IO.IN)
 
 
 def blinkMe(gpioNum, duration):
