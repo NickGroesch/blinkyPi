@@ -31,7 +31,8 @@ while True:
     # https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
     cmd = "hostname -I | cut -d' ' -f1"
     IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
-    hostname = subprocess.check_output('hostname', shell=True).decode("utf-8")
+    cmd = "hostname"
+    hostname = subprocess.check_output(cmd, shell=True).decode("utf-8")
     cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
     CPU = subprocess.check_output(cmd, shell=True).decode("utf-8")
     cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%s MB  %.2f%%\", $3,$2,$3*100/$2 }'"
@@ -41,10 +42,11 @@ while True:
 
     # Write four lines of text.
     ipline = "IP: " + IP + " " + hostname
-    draw.text((x, top + 0), ipline, font=font, fill=255)
-    draw.text((x, top + 8), CPU, font=font, fill=255)
-    draw.text((x, top + 16), MemUsage, font=font, fill=255)
-    draw.text((x, top + 25), Disk, font=font, fill=255)
+    print(ipline)
+    draw.text((x, top + 0), ipline, font=font, fill=127)
+    draw.text((x, top + 8), CPU, font=font, fill=127)
+    draw.text((x, top + 16), MemUsage, font=font, fill=127)
+    draw.text((x, top + 25), Disk, font=font, fill=127)
 
     # Display image.
     disp.image(image)
