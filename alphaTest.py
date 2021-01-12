@@ -7,6 +7,6 @@ bF.setup(bF.pinList, None)
 for digit, representation in sSM.sevSegMap.items():
     print(digit, representation)
     print(sSM.masker(pinList, representation))
-    bF.blinkMe(representation, 5)
+    bF.blinkMe(sSM.masker(pinList, representation), 5)
 
 bF.shutdown()
