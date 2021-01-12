@@ -7,6 +7,7 @@ import adafruit_ssd1306
 
 DISPLAY_ON = 2
 DISPLAY_OFF = 18
+
 i2c = busio.I2C(SCL, SDA)
 disp = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 disp.fill(0)
@@ -41,12 +42,11 @@ while True:
     Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
     # Write four lines of text.
-    ipline = "IP: " + IP + " " + hostname
-    print(ipline)
-    draw.text((x, top + 0), ipline, font=font, fill=127)
-    draw.text((x, top + 8), CPU, font=font, fill=127)
-    draw.text((x, top + 16), MemUsage, font=font, fill=127)
-    draw.text((x, top + 25), Disk, font=font, fill=127)
+    ipline = IP.rstrip + " " + hostname
+    draw.text((x, top + 0), ipline, font=font, fill="red")
+    draw.text((x, top + 8), CPU, font=font, fill="red")
+    draw.text((x, top + 16), MemUsage, font=font, fill="red")
+    draw.text((x, top + 25), Disk, font=font, fill="red")
 
     # Display image.
     disp.image(image)
