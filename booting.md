@@ -48,8 +48,14 @@ install pip3 `sudo apt install python3-pip`
 
 install circuitPython `sudo pip3 install adafruit-circuitpython-ssd1306`
 
+install PIL `sudo apt-get install python3-pil`
+
+install this: `sudo apt-get install libopenjp2-7`
+
 try to detect I2C with `sudo i2cdetect -y 1`
 
 install git with `sudo apt install git`
+
+[set up git](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/set-up-git)
 
 clone the repo `git clone git@github.com:NickGroesch/blinkyPi.git`
