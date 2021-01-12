@@ -40,8 +40,8 @@ while True:
     Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
     # Write four lines of text.
-
-    draw.text((x, top + 0), "IP: " + IP + " " + hostname, font=font, fill=255)
+    ipline = "IP: " + IP + " " + hostname
+    draw.text((x, top + 0), ipline, font=font, fill=255)
     draw.text((x, top + 8), CPU, font=font, fill=255)
     draw.text((x, top + 16), MemUsage, font=font, fill=255)
     draw.text((x, top + 25), Disk, font=font, fill=255)
