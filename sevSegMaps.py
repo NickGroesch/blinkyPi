@@ -23,3 +23,15 @@ sevSegMap = {
     # o
     # t
 }
+
+
+def masker(pinList, representation):
+    # masked = map(lambda x, y: x if y else None, pinList, representation)
+    # print(list(masked))
+    # print('wtf')
+    # #filtered = [i for i in list(masked) if i]
+    # filtered = list(filter(lambda x: print(x) if x else False, list(masked)))
+    # newOne = [masked[i] for i in xrange(len(maksed)) if msk[i]]
+    filtered = [pinList[i] for i in range(len(pinList)) if representation[i]]
+    print(filtered)
+    return filtered

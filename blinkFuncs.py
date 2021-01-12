@@ -1,6 +1,7 @@
 import RPi.GPIO as IO
 import time
 
+
 pinList = [37, 35, 33, 31, 40, 38, 36]
 
 
