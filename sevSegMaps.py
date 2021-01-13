@@ -16,8 +16,8 @@ sevSegMap = {
     "b": [0, 0, 1, 1, 1, 1, 1],
     "c": [0, 0, 0, 1, 1, 0, 1],
     "d": [0, 1, 1, 1, 1, 0, 1],
-    "E": [1, 1, 0, 1, 1, 0, 1],
-    "F": [1, 0, 0, 1, 1, 1, 1],
+    "E": [1, 0, 0, 1, 1, 1, 1],
+    "F": [1, 0, 0, 0, 1, 1, 1],
     # other letters
     # g=> 9
     "h": [0, 0, 1, 0, 1, 1, 1],
@@ -29,7 +29,7 @@ sevSegMap = {
     "n": [0, 0, 1, 0, 1, 0, 1],
     "o": [0, 0, 1, 1, 1, 0, 1],
     "P": [1, 1, 0, 0, 1, 1, 1],
-    # Q=> 9 TODO: figure it out
+    "Q": [0, 1, 1, 1, 1, 1, 1],  # cause it looks weird, like Q
     "r": [0, 0, 0, 0, 1, 0, 1],
     # S=> 5
     "t": [0, 0, 0, 1, 1, 1, 1],
@@ -39,6 +39,8 @@ sevSegMap = {
     "X": [0, 1, 1, 0, 1, 1, 1],  # looks like h
     "Y": [0, 1, 1, 1, 0, 1, 1],
     # Z=>2
+    # characters
+    " ": [0, 0, 0, 0, 0, 0, 0]
 }
 sevSegMap["g"] = sevSegMap[9]
 sevSegMap["K"] = sevSegMap["X"]
@@ -60,7 +62,7 @@ sevSegMap["m"] = sevSegMap["M"]
 sevSegMap["N"] = sevSegMap["n"]
 sevSegMap["O"] = sevSegMap["o"]
 sevSegMap["p"] = sevSegMap["P"]
-# TODO:Q
+sevSegMap["q"] = sevSegMap["Q"]
 sevSegMap["R"] = sevSegMap["r"]
 sevSegMap["s"] = sevSegMap[5]
 sevSegMap["T"] = sevSegMap["t"]
