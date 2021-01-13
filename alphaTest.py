@@ -13,7 +13,7 @@ def spellItOut(messageString):
     for char in split(messageString):
         # print(char)
         # print(sSM.sevSegMap[char])
-        bf.blinkMe(ssM.masker(bF.pinList, sSM.sevSegMap[char]), DURATION)
+        bF.blinkMe(sSM.masker(bF.pinList, sSM.sevSegMap[char]), DURATION)
 
 
 def split(string):
