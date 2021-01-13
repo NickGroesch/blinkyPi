@@ -63,7 +63,7 @@ sevSegMap["p"] = sevSegMap["P"]
 # TODO:Q
 sevSegMap["R"] = sevSegMap["r"]
 sevSegMap["s"] = sevSegMap[5]
-sevSegMap["T"] = sevSegMap["T"]
+sevSegMap["T"] = sevSegMap["t"]
 sevSegMap["u"] = sevSegMap["U"]
 sevSegMap["V"] = sevSegMap["v"]
 sevSegMap["W"] = sevSegMap["w"]
