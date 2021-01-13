@@ -20,8 +20,7 @@ def split(string):
     return [char for char in string]
 
 
-spellItOut("there once was a buffi from nantucket buffi")
-
 bF.setup(bF.pinList, None)
+spellItOut("there once was a buffi from nantucket buffi")
 
 bF.shutdown()
