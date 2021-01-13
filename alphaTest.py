@@ -11,15 +11,16 @@ def alphaTest():
 
 def spellItOut(messageString):
     for char in split(messageString):
-        print(char)
-        print(sSM.sevSegMap[char])
+        # print(char)
+        # print(sSM.sevSegMap[char])
+        bf.blinkMe(ssM.masker(bF.pinList, sSM.sevSegMap[char]), DURATION)
 
 
 def split(string):
     return [char for char in string]
 
 
-spellItOut("there once was a man from nantucket")
+spellItOut("there once was a buffi from nantucket buffi")
 
 bF.setup(bF.pinList, None)
 
