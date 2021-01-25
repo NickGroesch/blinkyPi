@@ -56,6 +56,24 @@ try to detect I2C with `sudo i2cdetect -y 1` looking for `3c`
 
 install git with `sudo apt install git`
 
+`git config --global user.name "Mona Lisa"`
+
+`git config --global user.email "email@example.com"`
+
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+
+`touch ~/.ssh/config` and then put in 
+
+```
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes #DELETE THIS LINE IF YOU HAVE EMPTY PASSPHRASE
+  IdentityFile ~/.ssh/id_rsa
+```
+
+`ssh-add -K ~/.ssh/id_rsa`
+copy the publickey into github
+
 [set up git](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/set-up-git)
 
 clone the repo `git clone git@github.com:NickGroesch/blinkyPi.git`
@@ -63,3 +81,15 @@ clone the repo `git clone git@github.com:NickGroesch/blinkyPi.git`
 run `python3 stats.py`
 
 if wiring piOLED: `[[],[]]`
+
+edit `/etc/rc.local` and run your command with a fork (ending the line with a single ampersand) a;a:
+
+```
+sudo pip3 install picamera
+```
+
+
+```
+sudo python3 /hom/pi/krs/kaBootup.py & 
+```
+
