@@ -8,8 +8,8 @@ ctl2_pin = 21
 in3_pin = 20
 in4_pin = 16
 
-# io.setup(ctl1_pin, io.OUT, pull_up_down=io.PUD_UP)
-# io.setup(ctl2_pin, io.OUT, pull_up_down=io.PUD_UP)
+io.setup(ctl1_pin, io.OUT)  # , pull_up_down=io.PUD_UP)
+io.setup(ctl2_pin, io.OUT)  # , pull_up_down=io.PUD_UP)
 io.setup(in1_pin, io.OUT)
 io.setup(in2_pin, io.OUT)
 io.setup(in3_pin, io.OUT)
