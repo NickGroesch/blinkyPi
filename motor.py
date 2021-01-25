@@ -16,9 +16,9 @@ io.setup(in3_pin, io.OUT)
 io.setup(in4_pin, io.OUT)
 
 a = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
-b = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
-c = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
-d = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
+b = io.PWM(in2_pin, 50)  # channel=12 frequency=50Hz
+c = io.PWM(in3_pin, 50)  # channel=12 frequency=50Hz
+d = io.PWM(in4_pin, 50)  # channel=12 frequency=50Hz
 
 
 def clockwise(tenth):
