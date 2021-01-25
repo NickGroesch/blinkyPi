@@ -1,54 +1,57 @@
 import RPi.GPIO as io
 io.setmode(io.BCM)
-
+ctl1_pin = 26
 in1_pin = 19
 in2_pin = 13
+
+ctl2_pin = 21
 in3_pin = 20
 in4_pin = 16
 
+io.setup(ctl1_pin, io.IN, pull_up_down=io.PUD_UP)
+io.setup(ctl2_pin, io.IN, pull_up_down=io.PUD_UP)
 io.setup(in1_pin, io.OUT)
 io.setup(in2_pin, io.OUT)
 io.setup(in3_pin, io.OUT)
 io.setup(in4_pin, io.OUT)
 
-
-def set(property, value):
-    try:
-        f = open("/sys/class/rpi-pwm/pwm0/" + property, 'w')
-        f.write(value)
-        f.close()
-    except:
-        print("Error writing to: " + property + " value: " + value)
+a = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
+b = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
+c = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
+d = io.PWM(in1_pin, 50)  # channel=12 frequency=50Hz
 
 
-set("delayed", "0")
-set("mode", "pwm")
-set("frequency", "500")
-set("active", "1")
+def clockwise(tenth):
+    a.start(tenth * 11)
+    b.start(tenth * 11)
+    c.stop()
+    d.stop()
 
 
-def clockwise():
-    io.output(in1_pin, True)
-    io.output(in2_pin, False)
-    io.output(in3_pin, False)
-    io.output(in4_pin, True)
+def counter_clockwise(tenth):
+    c.start(tenth * 11)
+    d.start(tenth * 11)
+    a.stop()
+    b.stop()
 
 
-def counter_clockwise():
-    io.output(in1_pin, False)
-    io.output(in2_pin, True)
-    io.output(in3_pin, True)
-    io.output(in4_pin, False)
+def end():
+    a.stop()
+    b.stop()
+    c.stop()
+    d.stop()
+    io.cleanup()
 
 
-clockwise()
-
+clockwise(0)
 while True:
-    cmd = raw_input("Command, f/r 0..9, E.g. f5 :")
+    cmd = input("Command, f/r/e 0..9, E.g. f5 :")
     direction = cmd[0]
     if direction == "f":
-        clockwise()
+        clockwise(int(cmd[1]))
+    elif direction == "e":
+        end()
     else:
-        counter_clockwise()
-    speed = int(cmd[1]) * 11
-    set("duty", str(speed))
+        counter_clockwise(int(cmd[1]))
+    #speed = int(cmd[1]) * 11
+    #set("duty", str(speed))
