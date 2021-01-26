@@ -24,6 +24,12 @@ try:
                 pwm.setRotationAngle(0, i)
             time.sleep(0.1)
 
+        for i in range(135, 45, -1):
+            pwm.setRotationAngle(2, i)
+            if(i < 80):
+                pwm.setRotationAngle(3, i)
+            time.sleep(0.1)
+
 except:
     pwm.exit_PCA9685()
     print("\nProgram end")
