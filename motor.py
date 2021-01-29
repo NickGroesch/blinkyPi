@@ -24,15 +24,15 @@ d = io.PWM(in4_pin, 500)  # channel=12 frequency=50Hz
 def clockwise(tenth):
     a.start(tenth * 11)
     b.stop()
-    c.start(tenth * 11)
-    d.stop()
+    c.stop()
+    d.start(tenth * 11)
 
 
 def counter_clockwise(tenth):
     a.stop()
     b.start(tenth * 11)
-    c.stop()
-    d.start(tenth * 11)
+    c.start(tenth * 11)
+    d.stop()
 
 
 def end():
