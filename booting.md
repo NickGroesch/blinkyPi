@@ -34,11 +34,10 @@ picocom -b 115200 /dev/tty.usbserial-0001
 ```
 else ssh with basic `pi:raspberry@<host>`
 
-once you are in 
-* use `passwd` to change your login password
-* use 'raspi-config' to change hostname
-
-### INSTALL piOLED
+once you are in use raspi-config to
+* change your login password
+* change hostname
+* enable camera
 
 update `sudo apt update` 
 
@@ -50,15 +49,23 @@ install circuitPython `sudo pip3 install adafruit-circuitpython-ssd1306`
 
 install PIL `sudo apt-get install python3-pil`
 
+`sudo pip3 install picamera`
+### INSTALL piOLED
+
+
 install this: `sudo apt-get install libopenjp2-7`
 
 try to detect I2C with `sudo i2cdetect -y 1` looking for `3c`
+
+### INSTALL GIT
 
 install git with `sudo apt install git`
 
 `git config --global user.name "Mona Lisa"`
 
 `git config --global user.email "email@example.com"`
+
+`eval "$(ssh-agent -s)"`
 
 `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
@@ -71,12 +78,13 @@ Host *
   IdentityFile ~/.ssh/id_rsa
 ```
 
-`ssh-add -K ~/.ssh/id_rsa`
+`ssh-add ~/.ssh/id_rsa`
+
 copy the publickey into github
 
-[set up git](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/set-up-git)
-
 clone the repo `git clone git@github.com:NickGroesch/blinkyPi.git`
+
+clone the repo `git clone git@github.com:NickGroesch/krs.git`
 
 run `python3 stats.py`
 
@@ -84,12 +92,11 @@ if wiring piOLED: `[[],[]]`
 
 edit `/etc/rc.local` and run your command with a fork (ending the line with a single ampersand) a;a:
 
-```
-sudo pip3 install picamera
-```
+
+
 
 
 ```
-sudo python3 /hom/pi/krs/kaBootup.py & 
+sudo python3 /home/pi/krs/atomicEmitter.py & 
 ```
 
