@@ -26,15 +26,20 @@ export default function Joy({ center }) {
             transform={`translate(${labelX}, ${labelY})`}
             onTouchStart={e => {
                 console.log("that tickles", origin, coordinates, dragging)
-                setOrigin({ x: e.clientX, y: e.clientY });
+                console.log(e)
+                setOrigin({
+                    x: e.targetTouches[0].clientX,
+                    y: e.targetTouches[0].clientY
+                });
                 setDragging(true);
             }}
             onTouchMove={e => {
                 if (dragging) {
+                    console.log(e.targetTouches[0])
                     console.log("ha-ha", origin, coordinates, dragging)
                     setCoordinates({
-                        x: e.clientX - origin.x,
-                        y: e.clientY - origin.y,
+                        x: e.targetTouches[0].clientX - origin.x,
+                        y: e.targetTouches[0].clientY - origin.y,
                     });
                 }
             }}
