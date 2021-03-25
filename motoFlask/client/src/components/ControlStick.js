@@ -8,6 +8,10 @@ export default function ControlStick({ chirality, stickType, className }) {
         <div className={className}>
 
             <svg viewBox="0 0 200 224">
+                {/* <style>
+                    .small {font: italic 13px sans-serif; }
+
+                </style> */}
                 <g className="analog-stick-bounding-box">
                     {stickType == "2d" ?
                         <ellipse cx="50.7" cy="56.4" rx="49.9" ry="48.1" stroke="white"></ellipse>

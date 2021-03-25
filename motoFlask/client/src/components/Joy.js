@@ -27,7 +27,7 @@ export default function Joy({ offsetY, valY, setValY, bounds, valX, setValX }) {
         <g
             style={{
                 cursor: '-webkit-grab',
-                fill: 'rgb(0, 159, 214)',
+                fill: "whitesmoke",
                 strokeWidth: 'inherit',
                 pointerEvents: "all"
             }}
@@ -61,11 +61,10 @@ export default function Joy({ offsetY, valY, setValY, bounds, valX, setValX }) {
                 setTimeout(() => goHome(), 200)
             }}
         >
-            <ellipse cx="100.8" cy="100" rx="64.4" ry="32.2" stroke="white" fill='rgb(55, 159, 214)'>
-                <text color="white">{valY}</text>
-            </ellipse>
+            <ellipse cx="100.8" cy="100" rx="64.4" ry="32.2" stroke="white" fill='rgb(55, 159, 214)' />
             <ellipse cx="100" cy="97" rx="43.2" ry="20.2" stroke="white" fill='rgb(55, 100
-                ,222)'></ellipse>
+                ,222)'/>
+            <text x="45%" y="45%">{valY * 2}</text>
         </g >
     )
 };
