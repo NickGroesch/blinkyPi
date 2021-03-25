@@ -1,6 +1,8 @@
+// Inspiration https://dev.to/tvanantwerp/dragging-svgs-with-react-38h6
+
 import { useState } from "react"
 
-export default function Joy({ center, name, value }) {
+export default function Joy({ center }) {
     const chirality = "right" //STUB
 
     const [dragging, setDragging] = useState(false);
@@ -11,31 +13,33 @@ export default function Joy({ center, name, value }) {
     const labelY = center[1] + coordinates.y
 
     return (
-        <g className={`analog-stick analog-stick-${chirality}`}
-            data-button={`stick-${chirality}`}
-            data-bounding-box={`analog-stick${chirality}-bouding-box`}
+        <g
+            // className={`analog-stick analog-stick-${chirality}`}
+            //     data-button={`stick-${chirality}`}
+            //     data-bounding-box={`analog-stick${chirality}-bouding-box`}
             style={{
                 cursor: '-webkit-grab',
                 fill: 'rgb(0, 159, 214)',
-                strokeWidth: 'inherit'
+                strokeWidth: 'inherit',
+                pointerEvents: "all"
             }}
             transform={`translate(${labelX}, ${labelY})`}
-            onMouseDown={e => {
+            onTouchStart={e => {
+                console.log("that tickles", origin, coordinates, dragging)
                 setOrigin({ x: e.clientX, y: e.clientY });
                 setDragging(true);
             }}
-            onMouseMove={e => {
-                // As long as we haven't let go of the mouse button,
-                // we are still dragging.
+            onTouchMove={e => {
                 if (dragging) {
+                    console.log("ha-ha", origin, coordinates, dragging)
                     setCoordinates({
                         x: e.clientX - origin.x,
                         y: e.clientY - origin.y,
                     });
                 }
             }}
-            onMouseUp={() => {
-                // We let go of the mouse, ending our drag.
+            onTouchEnd={() => {
+                console.log("what a relief", origin, coordinates, dragging)
                 setDragging(false);
             }}
         >

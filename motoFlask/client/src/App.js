@@ -13,7 +13,7 @@ function App() {
 
       <ControlStick className="sized" chirality="left" />
       <RoboViewPort />
-      <ControlStick chirality="right" />
+      <ControlStick className="sized" chirality="right" />
 
 
     </div>
