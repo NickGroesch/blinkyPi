@@ -3,15 +3,21 @@ import Joy from "./Joy"
 import VerticalTrack from "./VerticalTrack"
 
 export default function ControlStick({ chirality, stickType, className }) {
+    const [valY, setValY] = useState(0)
     return (
         <div className={className}>
 
-            <svg viewBox="0 0 100 100">
+            <svg viewBox="0 0 200 224">
                 <g className="analog-stick-bounding-box">
                     {stickType == "2d" ?
                         <ellipse cx="50.7" cy="56.4" rx="49.9" ry="48.1" stroke="white"></ellipse>
                         : <VerticalTrack />}
-                    <Joy center={[0, 0]} />
+                    <Joy
+                        bounds={[[0, 0], [-50, 50]]}
+                        offsetY={0}
+                        valY={valY}
+                        setValY={setValY}
+                        valX={0} />
                     {/* <g className={`analog-stick analog-stick-${chirality}`}
                     data-button={`stick-${chirality}`}
                     data-bounding-box={`analog-stick${chirality}-bouding-box`}
