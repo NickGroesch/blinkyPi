@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  position:fixed
+}
+
+.sized {
+  width: 100px;
+  height: 75px;
+}

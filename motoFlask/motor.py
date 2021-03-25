@@ -47,6 +47,7 @@ def end():
 io.output(ctl1_pin, 1)
 io.output(ctl2_pin, 1)
 clockwise(0)
+
 while True:
     cmd = input("Command, f/r/e 0..9, E.g. f5 :")
     direction = cmd[0]
