@@ -11,7 +11,7 @@ export default function Joy({
     setValY,
     bounds,
     joyType }) {
-    console.log(valY)
+    // console.log(valY)
     const chirality = "right" //STUB
 
     const [dragging, setDragging] = useState(false);
@@ -43,10 +43,10 @@ export default function Joy({
             }}
             transform={`translate(${transX}, ${transY})`}
             onTouchStart={e => {
-                console.log({
-                    x: e.targetTouches[0].clientX,
-                    y: e.targetTouches[0].clientY
-                })
+                // console.log({
+                //     x: e.targetTouches[0].clientX,
+                //     y: e.targetTouches[0].clientY
+                // })
                 setOrigin({
                     x: e.targetTouches[0].clientX,
                     y: e.targetTouches[0].clientY

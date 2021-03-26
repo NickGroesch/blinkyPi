@@ -25,11 +25,6 @@ function App() {
         src={process.env.REACT_APP_ATOMIC_EMITTER_IP}
       />
 
-      {/* <ControlStick className="sized" stickType="Vertical" />
-      <ControlStick className="sized" stickType="Horizontal" />
-      <ControlStick className="sized" stickType="2d" /> */}
-
-
     </div>
   );
 }
