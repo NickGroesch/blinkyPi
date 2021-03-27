@@ -1,7 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import ControlStick from "./ControlStick"
 
 export default function Mask() {
+    const [tracks, setTracks] = useState([0, 0])
+    // const handleTrackChange = () => {
+    //     API.
+    // }
+
+
+
     return (
         <div style={{
             width: "100%",

@@ -6,7 +6,7 @@ import Mask from "./components/Mask"
 // INSPIRATION https://www.polygon.com/a/ps4-review/ps4-review/
 
 function App() {
-  // window.ScreenOrientation.lock("landscape")
+  // window.ScreenOrientation.lock("landscape")//TODO: look into npm:express-device
   const props = { chirality: 'left' }
   return (
     <div className="App">
