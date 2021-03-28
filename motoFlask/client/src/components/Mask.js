@@ -15,6 +15,8 @@ export default function Mask() {
         console.log(unpacked)
     }, [rightTrack, leftTrack])
 
+    console.log("emitter", process.env.REACT_APP_ATOMIC_EMITTER_IP)
+    console.log("flask", process.env.REACT_APP_FLASK_IP)
 
     return (
         <div style={{

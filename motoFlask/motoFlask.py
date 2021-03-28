@@ -59,9 +59,12 @@ def api():
         val = request.get_json()
         print(val)
         locomote(val[0], val[1])
-        newVals = map(lambda x: 10 * x, val)
-        pyDict = {'ok': True, "val": list(newVals)}
-        return jsonify(pyDict)
+        # newVals = map(lambda x: 10 * x, val)
+        pyDict = {'ok': True}
+        # pyDict = {'ok': True, "val": list(newVals)}
+        response = jsonify(pyDict)
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        return response
 
 
 if __name__ == '__main__':
