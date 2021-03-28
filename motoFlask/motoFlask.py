@@ -40,11 +40,11 @@ def locomote(left, right):
     if left > 0:
         a.start(left)
     if left < 0:
-        b.start(left)
+        b.start(-1*left)
     if right > 0:
         c.start(right)
     if right < 0:
-        d.start(right)
+        d.start(-1*right)
 
 
 @app.route('/')
