@@ -1,5 +1,6 @@
 import subprocess
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import RPi.GPIO as io
 
 io.setmode(io.BCM)
@@ -24,6 +25,7 @@ c = io.PWM(in3_pin, 500)  # channel=12 frequency=50Hz
 d = io.PWM(in4_pin, 500)  # channel=12 frequency=50Hz
 
 app = Flask(__name__)
+CORS(app)
 
 cmd = "hostname -I | cut -d' ' -f1"
 IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
