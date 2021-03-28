@@ -1,6 +1,7 @@
 import subprocess
 from flask import Flask, request, jsonify
 import RPi.GPIO as io
+
 io.setmode(io.BCM)
 ctl1_pin = 26
 in1_pin = 19
@@ -56,8 +57,8 @@ def api():
         return "Nasty of you to do me like that"
     else:
         val = request.get_json()
-        locomote(val[0], val[1])
         print(val)
+        locomote(val[0], val[1])
         newVals = map(lambda x: 10 * x, val)
         pyDict = {'ok': True, "val": list(newVals)}
         return jsonify(pyDict)
