@@ -10,10 +10,10 @@ export default function Mask() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify([rightTrack, leftTrack]),
         }
-        const fetchRes = await fetch("/api", requestOptions)
+        const fetchRes = await fetch(`${process.env.REACT_APP_FLASK_IP}/api`, requestOptions)
         const unpacked = await fetchRes.json()
         console.log(unpacked)
-    })
+    }, [rightTrack, leftTrack])
 
 
     return (
