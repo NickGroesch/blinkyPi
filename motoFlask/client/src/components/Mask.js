@@ -1,18 +1,19 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import ControlStick from "./ControlStick"
 import VStick from "./VStick"
 export default function Mask() {
     const [rightTrack, setRightTrack] = useState(0)
     const [leftTrack, setLeftTrack] = useState(0)
-
-    const roundRight = (val) => {
-    }
-    const roundLeft = (val) => {
-    }
-    // const handleTrackChange = () => {
-    //     API.
-    // }
-
+    useEffect(async () => {
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify([rightTrack, leftTrack]),
+        }
+        const fetchRes = await fetch("/api", requestOptions)
+        const unpacked = await fetchRes.json()
+        console.log(unpacked)
+    })
 
 
     return (

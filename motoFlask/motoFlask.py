@@ -1,5 +1,5 @@
 import subprocess
-from flask import Flask, request
+from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 cmd = "hostname -I | cut -d' ' -f1"
@@ -17,7 +17,10 @@ def api():
     if request.content_length > 100000:
         return "Nasty of you to do me like that"
     else:
-        print(request.get_json())
+        val = request.get_json()
+        print(val)
+        pyDict = {'ok': True, "val": val}
+        return jsonify(pyDict)
 
 
 if __name__ == '__main__':
