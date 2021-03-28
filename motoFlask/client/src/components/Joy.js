@@ -65,8 +65,8 @@ export default function Joy({
                         thisX > bounds[0][1] ? bounds[0][1] :
                             thisX
 
-                    setValY(boundY)
-                    setValX(boundX)
+                    setValY(Math.round(boundY / 5))
+                    setValX(Math.round(boundX / 5))
 
                     setCoordinates({
                         x: e.targetTouches[0].clientX - origin.x,
@@ -83,20 +83,20 @@ export default function Joy({
                 <>
                     <ellipse cx={offsetX + 100.8} cy={offsetY + 100} rx="64.4" ry="32.2" stroke="white" fill='rgb(55, 159, 214)' />
                     <ellipse cx={offsetX + 100} cy={offsetY + 97} rx="43.2" ry="20.2" stroke="white" fill='rgb(55, 100 ,222)' />
-                    <text x={offsetX + 90} y={offsetY + 100}>{valY * 2}</text>
+                    <text x={offsetX + 90} y={offsetY + 100}>{valY}</text>
                 </>
                 : joyType == "2d" ?
                     <>
                         <ellipse cx={offsetX + 100} cy={offsetY + 100} rx="50.4" ry="50" stroke="white" fill='rgb(55, 159, 214)' />
                         <ellipse cx={offsetX + 100} cy={offsetY + 97} rx="40" ry="38.2" stroke="white" fill='rgb(55, 100,222)' />
-                        <text x="45%" y="52%">{valY * 2}</text>
-                        <text x="45%" y="45%">{valX * 2}</text>
+                        <text x="45%" y="52%">{valY}</text>
+                        <text x="45%" y="45%">{valX}</text>
                     </>
                     : //joyType=="Horizontal"
                     <>
                         <ellipse cx={offsetX + 100} cy={offsetY + 100} rx="32.2" ry="64.4" stroke="white" fill='rgb(55, 159, 214)' />
                         <ellipse cx={offsetX + 100} cy={offsetY + 97} rx="20.2" ry="43.2" stroke="white" fill='rgb(55, 100,222)' />
-                        <text x={offsetX + 84} y={offsetY + 100}>{valX * 2}</text>
+                        <text x={offsetX + 84} y={offsetY + 100}>{valX}</text>
 
                     </>}
 

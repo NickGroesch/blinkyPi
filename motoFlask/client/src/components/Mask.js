@@ -1,8 +1,14 @@
 import React, { useState } from "react"
 import ControlStick from "./ControlStick"
-
+import VStick from "./VStick"
 export default function Mask() {
-    const [tracks, setTracks] = useState([0, 0])
+    const [rightTrack, setRightTrack] = useState(0)
+    const [leftTrack, setLeftTrack] = useState(0)
+
+    const roundRight = (val) => {
+    }
+    const roundLeft = (val) => {
+    }
     // const handleTrackChange = () => {
     //     API.
     // }
@@ -36,7 +42,7 @@ export default function Mask() {
                     L 0 0"
                     fill="grey"
                 />
-                <text x="450" y="50"> REACT ROVER</text>
+                <text x="450" y="50"> {leftTrack} REACT ROVER {rightTrack} </text>
                 {/* <ControlStick //Tilt
                     offsetX={0}
                     offsetY={0}
@@ -47,15 +53,17 @@ export default function Mask() {
                     offsetY={0}
                     stickType="Horizontal"
                 /> */}
-                <ControlStick //left
+                <VStick //left
                     offsetX={0}
                     offsetY={200}
-                    stickType="Vertical"
+                    valY={leftTrack}
+                    setValY={setLeftTrack}
                 />
-                <ControlStick //right
+                <VStick //right
                     offsetX={800}
                     offsetY={200}
-                    stickType="Vertical"
+                    valY={rightTrack}
+                    setValY={setRightTrack}
                 />
             </svg>
         </div>

@@ -2,7 +2,7 @@ import { useState } from "react"
 import Joy from "./Joy"
 import VerticalTrack from "./VerticalTrack"
 
-export default function ControlStick({ offsetY, offsetX, valY, setValY }) {
+export default function VStick({ offsetY, offsetX, valY, setValY }) {
     const [valX, setValX] = useState(0)//just to make joy happy
     return (
         <g>
