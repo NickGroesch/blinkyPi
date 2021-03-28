@@ -29,9 +29,10 @@ IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
 
 def locomote(left, right):
-    if (left == 0 and right == 0):
+    if left == 0:
         a.stop()
         b.stop()
+    if right == 0:
         c.stop()
         d.stop()
     if left > 0:
@@ -57,9 +58,9 @@ def api():
     else:
         val = request.get_json()
         locomote(val[0], val[1])
-        print(val)
-        newVals = map(lambda x: 10 * x, val)
-        pyDict = {'ok': True, "val": list(newVals)}
+        # print(val)
+        #newVals = map(lambda x: 10 * x, val)
+        pyDict = {'ok': True}  # "val": list(newVals)}
         return jsonify(pyDict)
 
 
