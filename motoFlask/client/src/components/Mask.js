@@ -37,22 +37,22 @@ export default function Mask() {
                     fill="grey"
                 />
                 <text x="450" y="50"> REACT ROVER</text>
-                <ControlStick
+                {/* <ControlStick //Tilt
                     offsetX={0}
                     offsetY={0}
                     stickType="Vertical"
                 />
-                <ControlStick
+                <ControlStick   //Pan
                     offsetX={800}
                     offsetY={0}
                     stickType="Horizontal"
-                />
-                <ControlStick
+                /> */}
+                <ControlStick //left
                     offsetX={0}
                     offsetY={200}
                     stickType="Vertical"
                 />
-                <ControlStick
+                <ControlStick //right
                     offsetX={800}
                     offsetY={200}
                     stickType="Vertical"
