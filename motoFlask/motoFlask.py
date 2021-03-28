@@ -32,19 +32,30 @@ IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
 
 def locomote(left, right):
-    if (left == 0 and right == 0):
+    if left == 0:
+        print('sL')
         a.stop()
         b.stop()
+    if right == 0:
+        print('sR')
         c.stop()
         d.stop()
     if left > 0:
+        print('fL')
         a.start(10*left)
+        b.stop()
     if left < 0:
+        print('rL')
+        a.stop()
         b.start(-10*left)
     if right > 0:
+        print('fR')
+        d.stop()
         c.start(10*right)
     if right < 0:
+        print('rR')
         d.start(-10*right)
+        c.stop()
 
 
 @app.route('/')
@@ -65,7 +76,6 @@ def api():
         pyDict = {'ok': True}
         # pyDict = {'ok': True, "val": list(newVals)}
         response = jsonify(pyDict)
-        response.headers.add("Access-Control-Allow-Origin", "*")
         return response
 
 
