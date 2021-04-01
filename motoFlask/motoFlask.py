@@ -35,8 +35,6 @@ HStep = 0      #Sets the initial step length
 VPulse = 1000  #Sets the initial Pulse
 VStep = 0      #Sets the initial step length
 
-start = int(time.time())
-
 pwm.setServoPulse(1,HPulse)
 pwm.setServoPulse(0,VPulse)
 
@@ -46,7 +44,10 @@ cmd = "hostname -I | cut -d' ' -f1"
 IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
 def lookabout(tilt, pan):
-
+    pulseV = 1500 + (tilt * 100)
+    pulseH = 1500 + (pan * 100)
+    pwm.setServoPulse(1,pulseV)
+    pwm.setServoPulse(0,pulseH)
 
 def locomote(left, right):
     if left == 0:

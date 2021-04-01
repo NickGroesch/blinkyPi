@@ -6,6 +6,7 @@ import TwoDTrack from "./TwoDTrack"
 
 export default function HStick({ offsetY, offsetX, valX, setValX }) {
     const [valY, setValY] = useState(0)//useless state, but who cares
+    //could we equally mock with setValY=()=>null?
     return (
         <g>
             <HorizontalTrack
