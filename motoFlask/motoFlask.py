@@ -100,4 +100,6 @@ def api():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8228, host=IP)
+    app.run(debug=True, 
+        port=8228, 
+        host="0.0.0.0")

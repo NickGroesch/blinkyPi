@@ -10,25 +10,30 @@ try:
     # pwm.setServoPulse(1,500)
     pwm.setRotationAngle(1, 0)
 
-    while True:
-        # setServoPulse(2,2500)
-        for i in range(45, 135, 1):
-            pwm.setRotationAngle(1, i)
-            if(i < 80):
-                pwm.setRotationAngle(0, i)
-            time.sleep(0.1)
+   
 
-        for i in range(135, 45, -1):
-            pwm.setRotationAngle(1, i)
-            if(i < 80):
-                pwm.setRotationAngle(0, i)
-            time.sleep(0.1)
+    for i in range(45, 135, 1):
+        print(i)
+        pwm.setRotationAngle(1, i)
+        if(i < 80):
+            pwm.setRotationAngle(0, i)
+        time.sleep(0.1)
 
-        for i in range(135, 45, -1):
-            pwm.setRotationAngle(2, i)
-            if(i < 80):
-                pwm.setRotationAngle(3, i)
-            time.sleep(0.1)
+    for i in range(135, 45, -1):
+        pwm.setRotationAngle(1, i)
+        if(i < 80):
+            pwm.setRotationAngle(0, i)
+        time.sleep(0.1)
+
+    for i in range(135, 45, -1):
+        pwm.setRotationAngle(2, i)
+        if(i < 80):
+            pwm.setRotationAngle(3, i)
+        time.sleep(0.1)
+
+    pwm.exit_PCA9685()
+    print("\nProgram end")
+    exit()
 
 except:
     pwm.exit_PCA9685()
