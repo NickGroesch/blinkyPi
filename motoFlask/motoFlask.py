@@ -47,8 +47,8 @@ def lookabout(tilt):
     print(f'look at {tilt}')
     pulsePan = 1100 + (tilt * 50)
     #pulseH = 1500 + (pan * 100)
-    pwm.setServoPulse(1,pulseH)
-    pwm.setServoPulse(0,pulseV)
+    pwm.setServoPulse(1,pulsePan)
+    #pwm.setServoPulse(0,pulseV)
 
 def locomote(left, right):
     if left == 0:
