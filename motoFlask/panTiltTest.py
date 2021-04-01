@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 from PCA9685 import PCA9685
 
 print("Testing pantilt PCA9685 routine")
-pwm = PCA9685()
+pwm = PCA9685(0x40, debug=True)
 pwm.setPWMFreq(50)
 # pwm.setServoPulse(1,500)
 pwm.setRotationAngle(1, 0)
