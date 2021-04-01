@@ -32,7 +32,7 @@ pwm.setPWMFreq(50)
 #Set the Horizontal vertical servo parameters
 HPulse = 1500  #Sets the initial Pulse
 HStep = 0      #Sets the initial step length
-VPulse = 1000  #Sets the initial Pulse
+VPulse = 1500  #Sets the initial Pulse
 VStep = 0      #Sets the initial step length
 
 pwm.setServoPulse(1,HPulse)
@@ -44,6 +44,7 @@ cmd = "hostname -I | cut -d' ' -f1"
 IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
 def lookabout(tilt, pan):
+    print(f'look at {tilt}:{pan}')
     pulseV = 1500 + (tilt * 100)
     pulseH = 1500 + (pan * 100)
     pwm.setServoPulse(1,pulseV)
