@@ -8,6 +8,6 @@ pwm = PCA9685(0x40, debug=True)
 pwm.start_PCA9685()
 pwm.setPWMFreq(50)
 
-first=input('0 val')
-second=input('1000val')
+first=int(input('0 val'))
+second=int(input('1000val'))
 pwm.setServoPulse(first, second)
