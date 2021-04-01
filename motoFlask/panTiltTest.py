@@ -10,4 +10,4 @@ pwm.setPWMFreq(50)
 
 first=int(input('0 val'))
 second=int(input('1000val'))
-pwm.setServoPulse(first, second)
+pwm.setServoPulse(first, second) 

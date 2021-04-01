@@ -43,10 +43,10 @@ CORS(app)
 cmd = "hostname -I | cut -d' ' -f1"
 IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
-def lookabout(tilt, pan):
-    print(f'look at {tilt}:{pan}')
-    pulseV = 1500 + (tilt * 100)
-    pulseH = 1500 + (pan * 100)
+def lookabout(tilt):
+    print(f'look at {tilt}')
+    pulsePan = 1100 + (tilt * 50)
+    #pulseH = 1500 + (pan * 100)
     pwm.setServoPulse(1,pulseH)
     pwm.setServoPulse(0,pulseV)
 
@@ -91,7 +91,7 @@ def api():
         val = request.get_json()
         print(val)
         locomote(val[0], val[1])
-        lookabout(val[2],val[3])
+        lookabout(val[2])
         # newVals = map(lambda x: 10 * x, val)
         pyDict = {'ok': True}
         # pyDict = {'ok': True, "val": list(newVals)}
