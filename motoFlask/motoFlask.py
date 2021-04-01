@@ -1,5 +1,6 @@
 import subprocess
 from flask import Flask, request, jsonify
+from PCA9685 import PCA9685
 from flask_cors import CORS
 import RPi.GPIO as io
 
@@ -24,11 +25,27 @@ b = io.PWM(in2_pin, 500)  # channel=12 frequency=50Hz
 c = io.PWM(in3_pin, 500)  # channel=12 frequency=50Hz
 d = io.PWM(in4_pin, 500)  # channel=12 frequency=50Hz
 
+#Pan-Tilt-Hat
+pwm = PCA9685(0x40)
+pwm.setPWMFreq(50)
+
+#Set the Horizontal vertical servo parameters
+HPulse = 1500  #Sets the initial Pulse
+HStep = 0      #Sets the initial step length
+VPulse = 1000  #Sets the initial Pulse
+VStep = 0      #Sets the initial step length
+
+start = int(time.time())
+
+pwm.setServoPulse(1,HPulse)
+pwm.setServoPulse(0,VPulse)
+
 app = Flask(__name__)
 CORS(app)
-
 cmd = "hostname -I | cut -d' ' -f1"
 IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
+
+def lookabout(tilt, pan):
 
 
 def locomote(left, right):
@@ -72,6 +89,7 @@ def api():
         val = request.get_json()
         print(val)
         locomote(val[0], val[1])
+        lookabout(val[2],val[3])
         # newVals = map(lambda x: 10 * x, val)
         pyDict = {'ok': True}
         # pyDict = {'ok': True, "val": list(newVals)}
