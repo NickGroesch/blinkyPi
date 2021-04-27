@@ -12,7 +12,7 @@ export default function Mask() {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify([rightTrack, leftTrack, pan, tilt]),
+            body: JSON.stringify([rightTrack, leftTrack, tilt, pan]),
         }
         const fetchRes = await fetch(`${process.env.REACT_APP_FLASK_IP}/api`, requestOptions)
         const unpacked = await fetchRes.json()

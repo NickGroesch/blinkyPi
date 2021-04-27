@@ -27,6 +27,7 @@ d = io.PWM(in4_pin, 500)  # channel=12 frequency=50Hz
 
 #Pan-Tilt-Hat
 pwm = PCA9685(0x40)
+pwm.start_PCA9685()
 pwm.setPWMFreq(50)
 
 #Set the Horizontal vertical servo parameters
@@ -46,9 +47,7 @@ IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 def lookabout(tilt):
     print(f'look at {tilt}')
     pulsePan = 1100 + (tilt * 50)
-    #pulseH = 1500 + (pan * 100)
     pwm.setServoPulse(1,pulsePan)
-    #pwm.setServoPulse(0,pulseV)
 
 def locomote(left, right):
     if left == 0:
